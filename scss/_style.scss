@@ -1,0 +1,369 @@
+ 
+/**********PEREMEN COLOR**********/
+
+$colorGrey: #b2b2b2; 
+$colorWhite: #fffefe;
+$colorBlack: #262626;
+$colorBlue: #2856b3; 
+
+$colorHeader : $colorWhite;
+$colorSection: $colorBlack;
+$colorFooter: $colorGrey;
+$colorBtn: $colorBlue;
+ 
+/**********FUNCTION SIZE EM**********/
+$browserFontSize: 16; 
+
+@function fontSizeEM($pixels, $context: $browserFontSize) {
+  @return #{$pixels/$context}em;
+}
+ 
+ /**********PEREMEN SIZE FONTS**********/
+$FontSizeNav: fontSizeEM(18); 
+$FontSizeLang: fontSizeEM(11);
+$FontSizeH1: fontSizeEM(72); 
+$FontSizeHeaderText: fontSizeEM(26);
+$FontSizeH2: fontSizeEM(46);
+$FontSizeBtn: fontSizeEM(20);
+$FontSizeSection:fontSizeEM(18);
+$FontSizeBody:fontSizeEM(14);
+$FontSizePartText:fontSizeEM(14);
+$FontSizeFooter: fontSizeEM(14);
+$FontSizeEntText:fontSizeEM(18); 
+
+
+/**********FONTS**********/
+
+@mixin fs-Medium {
+	font-family: AvenirNext-Medium, sans-serif;
+}
+
+@mixin fs-Regular {
+	font-family: AvenirNext-Regular, sans-serif;
+}
+
+@mixin fs-DemiBold {
+	font-family: AvenirNext-DemiBold, sans-serif;
+}
+
+/**********HOVER**********/
+
+@mixin hoverLink{
+	opacity: 0.7;
+	-webkit-transition: ease-in-out 0.25s;
+    -moz-transition: ease-in-out 0.25s;
+    -o-transition: ease-in-out 0.25s;
+	transition: ease-in-out 0.25s;
+}
+
+
+@mixin arrowDown {
+	width:0;
+	height:0;
+	border-left:4px solid transparent;
+	border-right:4px solid transparent;
+	border-top: 6px solid #ffffff;
+}
+
+
+.container{
+	margin: 0 auto;
+	width: 1400px;
+	background-color: #faf8f6; 
+}
+
+
+
+.header-top{
+	background: url(../img/bgImg.jpg)no-repeat 0 0;
+	width: 1400px;
+	height: 793px;
+}
+
+.header-top__logo{
+	background: url(../img/logo.png)no-repeat 0 0;
+	width:186px;
+	height:66px;
+	float:left;
+  	margin-left: 230px;
+    margin-top: 40px;
+
+     &:hover{
+     	@include hoverLink;
+     }
+}
+
+
+.header-top__lang{
+	color: $colorWhite;
+	@include fs-DemiBold;
+	font-size:$FontSizeLang;
+
+}
+
+.lang__text{
+	text-transform:uppercase;
+}
+
+.lang-position{
+	float: right;
+    margin-right: 232px;
+    margin-top: 19px;
+}
+
+.lang-position__li{ 
+	display: inline-block;
+   	margin-left: 19px;
+}
+
+.link{
+	color: $colorWhite;
+	text-decoration:none;
+	 &:hover{
+	 	@include hoverLink;
+	 }
+}
+
+
+.header-top__nav{
+	float:left;
+	margin-left: 159px;
+    margin-top: 59px;
+}
+
+.top-nav{
+	@include fs-Medium;
+   	font-size:18px;
+	color: $colorHeader;
+
+}
+
+
+.top-nav__li{
+	display:inline-block;
+	margin-left: 55px;
+
+		&::after{
+		content:'';
+		position:relative;
+		display:inline-block;
+		left: 7px;
+		top:-1px;
+		 @include arrowDown;
+		
+	}
+ 	 
+}
+
+.header-top__login{
+  width: 236px;
+  height: 45px;
+  border: 1px solid #ffffff;
+  border-radius:25px;
+  float:left;
+  margin-left: 62px;
+  margin-top: 15px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 10px 35px 0px rgba(13, 54, 135, 0.25);
+  -moz-shadow: 0px 10px 35px 0px rgba(13, 54, 135, 0.25);
+  -o--webkit-box-shadow: 0px 10px 35px 0px rgba(13, 54, 135, 0.25);
+   box-shadow: 0px 10px 35px 0px rgba(13, 54, 135, 0.25);
+}
+
+
+ 
+
+
+
+
+.top-login__li{
+	display:inline-block;
+	margin: 13px 12px 0 21px;
+    font-size:$FontSizeNav;
+	@include fs-Medium;
+}
+
+
+
+.li--border{
+		
+	 &::before{
+	 	content: "";
+	    border-right: 1px solid #ffffff;
+        height: 26px;
+        left: 61px;
+        opacity: 0.75;
+        position: relative;
+ 	 }
+}
+
+
+.header-post{
+	margin:0 auto;
+	width:940px;
+	text-align:center;
+	color:$colorWhite;
+}
+
+.post__title{
+	float:left;
+	margin-left: 80px;
+    margin-top: 240px;
+	@include fs-Medium;
+	font-size:$FontSizeH1;
+	line-height:71px;
+}
+
+
+.post__text{
+	float:left;
+	@include fs-Regular;
+	font-size:$FontSizeHeaderText;
+	margin-left: 97px;
+    margin-top: 30px;
+}
+
+ 
+.btn{
+	background: $colorBlue;
+	@include fs-Regular;
+	border:none;
+	color: #ffffff;
+	font-size:$FontSizeBtn;
+	padding: 14px 46px 16px;
+	cursor:pointer;
+	border-radius:60px;
+ 
+		 &:hover{
+	 		@include hoverLink;
+	 }
+
+}
+
+.header-form__btn{
+	clear:both;
+	float:left;
+ 	margin-left: 581px;
+    margin-top: 50px;
+	-webkit-box-shadow: 0px 10px 35px 0px rgba(13, 54, 135, 0.6);
+	-moz-box-shadow: 0px 10px 35px 0px rgba(13, 54, 135, 0.6);
+	-o-box-shadow: 0px 10px 35px 0px rgba(13, 54, 135, 0.6);
+	box-shadow: 0px 10px 35px 0px rgba(13, 54, 135, 0.6);
+}
+
+
+
+ /**********SECTION**********/
+
+.ent{
+	color:$colorBlack;
+	@include fs-Medium;
+
+}
+
+.ent__img{
+	background: url(../img/guy.png) no-repeat 0 0;
+	width: 490px;
+	height: 747px;
+	float:left;
+	margin-top:70px;
+	margin-left:99px;
+}
+
+.ent-info{
+	float:right;
+	width:620px;
+	margin-right: 161px;
+}
+
+.ent-info__title{
+	font-size:$FontSizeH2;
+	line-height: 61px;
+ 	margin-left: 9px;
+    margin-top: 91px;
+}
+
+.ent-info_text{
+	margin-left: 35px;
+    margin-top: 25px;
+}
+
+.ent-info_list{
+	@include fs-Medium;
+	font-size:$FontSizeEntText;
+ 	line-height: 29px;
+	padding-left:5px;
+	padding-bottom: 1px;
+	list-style: url("../img/li.png");
+	
+		&:first-child{
+		list-style:none;
+		margin: 31px 0 21px -30px;
+		}
+		&:last-child{
+		margin: 20px 0 21px -30px;
+		list-style:none;	
+	}	
+}
+
+.ent-form__btn{
+	margin-left: 11px;
+    margin-top: 19px;
+    -webkit-box-shadow: 0px 10px 35px 0px rgba(40, 86, 179, 0.2);
+    -moz-box-shadow: 0px 10px 35px 0px rgba(40, 86, 179, 0.2);
+    -o-box-shadow: 0px 10px 35px 0px rgba(40, 86, 179, 0.2);
+    box-shadow: 0px 10px 35px 0px rgba(40, 86, 179, 0.2);
+}
+
+ 
+.ent-info_partners{
+	border: 1px dashed rgba(0, 0, 0,0.15);
+	border-radius: 5px;
+	width: 458px;
+ 	height: 98px;
+ 	margin-left: 10px;
+    margin-top: 58px;
+}
+
+
+ .partners__text{
+	@include fs-Medium;
+ 	font-size: $FontSizePartText;
+ 	text-transform:uppercase;
+   	color:$colorGrey;
+ 	letter-spacing: 1px;
+    line-height: 25px;
+    padding: 24px 0 0 33px;
+    text-transform: uppercase;
+    word-spacing: 2px;
+ }
+ 
+
+ /**********FOOTER**********/
+
+.footer{
+	clear:both;
+	min-height:160px;
+}
+
+
+.footer-info{
+	float:left;
+	width:860px;
+	@include fs-Medium;
+	font-size:$FontSizeFooter;
+	color:$colorGrey;
+	margin-left: 228px;
+    margin-top: 55px;
+}
+
+.text__color{
+	color:$colorBlue;
+}
+
+.footer-info__copy{
+	display:block;
+	margin-top:20px;
+}
+
+
